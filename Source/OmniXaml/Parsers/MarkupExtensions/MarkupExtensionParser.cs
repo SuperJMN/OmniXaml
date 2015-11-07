@@ -51,7 +51,7 @@ namespace OmniXaml.Parsers.MarkupExtensions
         private static readonly Parser<TreeNode> DirectValue = from value in ValidChars.Many()
                                                                select new StringNode(new string(value.ToArray()));
 
-        private static Parser<char> ValidChars => Parse.LetterOrDigit.Or(Parse.Chars(':', '.', '[', ']', '(', ')', '!', '$'));
+        private static Parser<char> ValidChars => Parse.LetterOrDigit.Or(Parse.Chars(':', '.', '[', ']', '(', ')', '!', '$', '#'));
 
         private static readonly Parser<TreeNode> StringValueNode = QuotedValue.Or(DirectValue);
 
