@@ -24,6 +24,17 @@ namespace OmniXaml
             return Load(stream, xamlParserFactory.CreateForReadingSpecificInstance(instance));
         }
 
+        public T Load<T>(Stream stream) where T : class
+        {
+            return Load(stream, xamlParserFactory.CreateForReadingFree()) as T;
+        }
+
+        public T Load<T>(Stream stream, object instance) where T : class
+        {
+            return Load(stream, xamlParserFactory.CreateForReadingSpecificInstance(instance)) as T;
+        }
+
+
         private object Load(Stream stream, IXamlParser parser)
         {
             try

@@ -1,6 +1,5 @@
 ﻿namespace OmniXaml
 {
-    using System;
     using System.Collections.Generic;
     using System.IO;
     using Glass;
@@ -17,7 +16,7 @@
         {
             Guard.ThrowIfNull(phaseParserKit, nameof(phaseParserKit));
 
-            objectAssembler = phaseParserKit.ObjectAssembler;        
+            objectAssembler = phaseParserKit.ObjectAssembler;
             protoParser = phaseParserKit.ProtoParser;
             parser = phaseParserKit.Parser;
         }
@@ -40,6 +39,9 @@
     public interface IXamlLoader
     {
         object Load(Stream stream);
-        object Load(Stream stream, object instance);        
+        object Load(Stream stream, object instance);
+
+        T Load<T>(Stream stream) where T : class;
+        T Load<T>(Stream stream, object instance) where T : class;
     }
 }
