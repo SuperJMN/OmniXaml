@@ -459,5 +459,18 @@
             var listener = (TestListener)sut.LifecycleListener;
             CollectionAssert.AreEqual(expectedSequence, listener.InvocationOrder);
         }
+
+        [TestMethod]
+        public void MemberAfterInitalizationValue()
+        {
+            sut.Process(source.MemberAfterInitalizationValue);
+
+            var root = (RootObject)sut.Result;
+            var str = root.Collection[0];
+            var dummy = (DummyClass)root.Collection[1];
+
+            Assert.AreEqual("foo", str);
+            Assert.AreEqual(123, dummy.Number);
+        }
     }
 }

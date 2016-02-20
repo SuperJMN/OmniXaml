@@ -20,6 +20,7 @@ namespace OmniXaml.ObjectAssembler.Commands
             {
                 case ValueProcessingMode.InitializationValue:
                     StateCommuter.Current.Instance = ValuePipeLine.ConvertValueIfNecessary(value, StateCommuter.Current.XamlType);
+                    StateCommuter.ValueProcessingMode = ValueProcessingMode.AssignToMember;
                     break;
 
                 case ValueProcessingMode.Key:

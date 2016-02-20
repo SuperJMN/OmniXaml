@@ -7,6 +7,10 @@ namespace OmniXaml.Builder
 
     public class AddressPack : Collection<ConfiguredAssemblyWithNamespaces>
     {
+        public AddressPack()
+        {
+        }
+
         public AddressPack(IEnumerable<ConfiguredAssemblyWithNamespaces> assemblyAndClrs) : base(assemblyAndClrs.ToList())
         {           
         }

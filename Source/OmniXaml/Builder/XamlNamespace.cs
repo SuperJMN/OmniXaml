@@ -11,6 +11,12 @@ namespace OmniXaml.Builder
     {
         private readonly AddressPack addressPack;
 
+        public XamlNamespace(string name)
+        {
+            this.Name = name;
+            this.addressPack = new AddressPack();
+        }
+
         public XamlNamespace(string name, AddressPack addressPack)
         {
             this.Name = name;

@@ -1851,5 +1851,34 @@ namespace OmniXaml.Tests.Resources
                 };
             }            
         }
+
+        public IEnumerable<Instruction> MemberAfterInitalizationValue
+        {
+            get
+            {
+                return new List<Instruction>
+                {
+                    X.NamespacePrefixDeclaration(RootNs),
+                    X.StartObject<RootObject>(),
+                        X.StartMember<RootObject>(o => o.Collection),
+                            X.GetObject(),
+                                X.Items(),
+                                    X.StartObject<string>(),
+                                    X.Initialization(),
+                                    X.Value("foo"),
+                                    X.EndMember(),
+                                    X.EndObject(),
+                                    X.StartObject<DummyClass>(),
+                                    X.StartMember<DummyClass>(x => x.Number),
+                                    X.Value("123"),
+                                    X.EndMember(),
+                                    X.EndObject(),
+                                X.EndMember(),
+                            X.EndObject(),
+                        X.EndMember(),
+                    X.EndObject(),
+                };
+            }
+        }
     }
 }

@@ -9,7 +9,6 @@ namespace OmniXaml.Typing
         private readonly INamespaceRegistry namespaceRegistry;
         private readonly ITypeFactory typeTypeFactory;
         private readonly ITypeFeatureProvider featureProvider;
-        
 
         public TypeRepository(INamespaceRegistry namespaceRegistry, ITypeFactory typeTypeFactory, ITypeFeatureProvider featureProvider)
         {
