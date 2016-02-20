@@ -92,33 +92,17 @@
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ParseException))]
         public void SolidColorBrushResourceError()
         {
-            try
-            {
-                var visualTree = (Window)LoadXaml(Resources.SolidColorBrushResource);
-                Assert.Fail("Expected exception.");
-            }
-            catch (ParseException e)
-            {
-                Assert.AreEqual("Element attributes are not allowed on objects created via TypeConverter.", e.Message);
-            }
+            LoadXaml(Resources.SolidColorBrushResource);
         }
 
         [TestMethod]
+        [ExpectedException(typeof(LoadException))]
         public void ColumnDefinitionResourceError()
         {
-            try
-            {
-                var visualTree = (Window)LoadXaml(Resources.ColumnDefinitionResourceError);
-                Assert.Fail("Expected exception.");
-            }
-            catch (ParseException e)
-            {
-                Assert.AreEqual(
-                    "The TypeConverter for \"ColumnDefinition\" does not support converting from a string.", 
-                    e.Message);
-            }
+            LoadXaml(Resources.ColumnDefinitionResourceError);
         }
     }
 }
