@@ -455,11 +455,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Xaml\Wpf\ColumnDefinitionResourceError.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Xaml\Wpf\SolidColorBrushResource.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Xaml\Wpf\ColorResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Xaml\Wpf\SolidColorBrushResourceError.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
