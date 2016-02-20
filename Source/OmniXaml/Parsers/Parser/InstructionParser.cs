@@ -194,12 +194,15 @@
             if (IsNestedPropertyImplicit)
             {
                 var contentProperty = parentType.ContentProperty;
+
                 if (contentProperty == null)
                 {
-                    throw new ParseException($"Cannot get the content property for the type {parentType}");
+                    // There is no content property, so try to use a TypeConverter to supply the value.
+                    yield return Inject.Initialization();
+                    yield return Inject.Value(CurrentText);
+                    yield return Inject.EndOfMember();
                 }
-
-                if (contentProperty.XamlType.IsCollection)
+                else if (contentProperty.XamlType.IsCollection)
                 {
                     foreach (var instruction in ParseCollectionInsideThisProperty(contentProperty)) { yield return instruction; }
                 }

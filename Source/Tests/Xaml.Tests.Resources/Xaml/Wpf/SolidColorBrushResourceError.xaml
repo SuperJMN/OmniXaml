@@ -1,0 +1,7 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Window.Resources>
+    <!-- Expected Error: Element attributes are not allowed on objects created via TypeConverter. -->
+    <SolidColorBrush x:Key="brush" Opacity="0.5">#ff808080</SolidColorBrush>
+  </Window.Resources>
+</Window>

@@ -23,7 +23,7 @@ namespace OmniXaml.Wpf
 
         public string GetContentPropertyName(Type type)
         {
-            return type.GetTypeInfo().GetCustomAttribute<ContentPropertyAttribute>().Name;
+            return type.GetTypeInfo().GetCustomAttribute<ContentPropertyAttribute>()?.Name;
         }
 
         public IEnumerable<TypeConverterRegistration> TypeConverters => inner.TypeConverters;

@@ -40,7 +40,7 @@ namespace OmniXaml.ObjectAssembler
                 return converted;
             }
 
-            return value;
+            throw new ParseException($"Could not convert '{value}' (of type {value.GetType()}) to {targetType.UnderlyingType}");
         }
 
         private bool TryConverterIfAny(object value, XamlType targetType, out object result)

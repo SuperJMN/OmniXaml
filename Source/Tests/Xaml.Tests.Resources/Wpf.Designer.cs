@@ -89,6 +89,24 @@ namespace Xaml.Tests.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;Window xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        ///        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&gt;
+        ///  &lt;Window.Resources&gt;
+        ///    &lt;!-- Expected Errors (as reported in WPF):
+        ///         - The type &apos;ColumnDefinition&apos; does not support direct content.
+        ///         - The TypeConverter for &quot;ColumnDefinition&quot; does not support converting from a string.	
+        ///    --&gt;
+        ///    &lt;ColumnDefinition x:Key=&quot;col&quot;&gt;Foo&lt;/ColumnDefinition&gt;
+        ///  &lt;/Window.Resources&gt;
+        ///&lt;/Window&gt;.
+        /// </summary>
+        public static string ColumnDefinitionResourceError {
+            get {
+                return ResourceManager.GetString("ColumnDefinitionResourceError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;Window xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; Title=&quot;Hello from OmniXaml!&quot; Width=&quot;800&quot; Height=&quot;600&quot;&gt;
         ///  &lt;ListBox ItemsSource=&quot;{Binding Path=Collection}&quot;&gt;
         ///    &lt;ListBox.ItemTemplate&gt;
@@ -224,6 +242,35 @@ namespace Xaml.Tests.Resources {
         public static string ShowCase {
             get {
                 return ResourceManager.GetString("ShowCase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;Window xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        ///        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&gt;
+        ///  &lt;Window.Resources&gt;
+        ///    &lt;SolidColorBrush x:Key=&quot;brush&quot;&gt;#ff808080&lt;/SolidColorBrush&gt;
+        ///  &lt;/Window.Resources&gt;
+        ///&lt;/Window&gt;.
+        /// </summary>
+        public static string SolidColorBrushResource {
+            get {
+                return ResourceManager.GetString("SolidColorBrushResource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;Window xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        ///        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&gt;
+        ///  &lt;Window.Resources&gt;
+        ///    &lt;!-- Expected Error: Element attributes are not allowed on objects created via TypeConverter. --&gt;
+        ///    &lt;SolidColorBrush x:Key=&quot;brush&quot; Opacity=&quot;0.5&quot;&gt;#ff808080&lt;/SolidColorBrush&gt;
+        ///  &lt;/Window.Resources&gt;
+        ///&lt;/Window&gt;.
+        /// </summary>
+        public static string SolidColorBrushResourceError {
+            get {
+                return ResourceManager.GetString("SolidColorBrushResourceError", resourceCulture);
             }
         }
         
