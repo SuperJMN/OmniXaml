@@ -1,20 +1,22 @@
 version: 1.0.{build}
 os: Visual Studio 2015
-nuget:
-  account_feed: true
-  project_feed: true
+
 before_build:
 - nuget restore OmniXaml.sln
+
+environment:
+  auth_token:
+    secure: 1/e8AMVotuUIufSGUDn4MZubYFZSqXpmRFeRgcrIRZjiyoQpnZR/lSawMCL4A2SF
+
+configuration:
+  - Release
+
 after_test:
 - ps: nuget\build-appveyor.ps1
+
 artifacts:
   - path: nuget\*.nupkg
+
 build:
   project: OmniXaml.sln
-  publish_nuget: true
   verbosity: minimal
-deploy:
-- provider: NuGet
-  api_key:
-    secure: WMHJXgv1b4C+5aomux4ItsdejPsSk+E6L8Yqmraho7YJzdrL2KU6rvYf61/IgsC0
-  skip_symbols: true
