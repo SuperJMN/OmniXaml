@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>OmniXAML</id>
+    <version>#VERSION#</version>
+    <authors>XamlBehaviors</authors>
+    <owners>wieslaw.soltes</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/SuperJMN/OmniXAML/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The Cross-platform XAML Framework. OmniXAML is a library that allows you interpret XAML with ease. You can read XAML and get the object it represents, like a Window in WPF, a document, a diagram or whatever object you can describe.</description>
+    <releaseNotes>Initial alpha release.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>OmniXAML Xaml Managed C# WPF Perspex</tags>
+    <dependencies>
+      <dependency id="Rx-Core" version="2.3.0-beta2" />
+      <dependency id="Rx-Interfaces" version="2.3.0-beta2" />
+      <dependency id="Rx-Linq" version="2.3.0-beta2" />
+      <dependency id="Rx-Main" version="2.3.0-beta2" />
+      <dependency id="Rx-PlatformServices" version="2.3.0-beta2" />
+      <dependency id="Sprache.SuperJMN" version="2.0.0.50" />
+    </dependencies>
+  </metadata>
+</package>

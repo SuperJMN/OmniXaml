@@ -5,6 +5,10 @@ nuget:
   project_feed: true
 before_build:
 - nuget restore OmniXaml.sln
+after_test:
+- ps: nuget\build-appveyor.ps1
+artifacts:
+  - path: nuget\*.nupkg
 build:
   project: OmniXaml.sln
   publish_nuget: true
