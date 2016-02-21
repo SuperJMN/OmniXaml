@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>OmniXAML</id>
+    <version>#VERSION#</version>
+    <authors>José Manuel Nieto (@SuperJMN)</authors>
+    <owners>José Manuel Nieto (@SuperJMN)</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/SuperJMN/OmniXAML/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The Cross-platform XAML Framework.</description>
+    <summary>OmniXAML is a library that allows you interpret XAML with ease. You can read XAML and get the object it represents, like a Window in WPF, a document, a diagram or whatever object you can describe.</summary>
+    <releaseNotes>Initial alpha release.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>Glass OmniXAML Xaml Managed C# WPF Perspex MVVM UI</tags>
+    <dependencies>
+      <dependency id="Rx-Core" version="2.2.5" />
+      <dependency id="Rx-Interfaces" version="2.2.5" />
+      <dependency id="Rx-Linq" version="2.2.5" />
+      <dependency id="Rx-Main" version="2.2.5" />
+      <dependency id="Rx-PlatformServices" version="2.2.5" />
+      <dependency id="Sprache" version="2.0.0.50" />
+      <dependency id="Glass" version="#VERSION#" />
+    </dependencies>
+  </metadata>
+</package>

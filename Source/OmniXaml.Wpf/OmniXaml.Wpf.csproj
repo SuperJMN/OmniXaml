@@ -32,10 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Glass, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Glass\bin\Debug\Glass.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -91,6 +87,10 @@
     <Compile Include="WpfTypeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Glass\Glass.csproj">
+      <Project>{b719ff91-bc7a-4145-8597-811d504fcfef}</Project>
+      <Name>Glass</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OmniXaml.Services.DotNetFx\OmniXaml.Services.DotNetFx.csproj">
       <Project>{70B12EBB-E332-402E-BAF0-C55F38A6B753}</Project>
       <Name>OmniXaml.Services.DotNetFx</Name>

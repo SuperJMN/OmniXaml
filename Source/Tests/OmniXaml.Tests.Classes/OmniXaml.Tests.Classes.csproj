@@ -82,6 +82,7 @@
     <Compile Include="WpfLikeModel\WindowWithUserControl.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="WpfLikeModel\MyUserControl.xaml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
