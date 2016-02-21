@@ -5,7 +5,7 @@ before_build:
 - nuget restore OmniXaml.sln
 
 environment:
-  auth_token:
+  myget_key:
     secure: 1/e8AMVotuUIufSGUDn4MZubYFZSqXpmRFeRgcrIRZjiyoQpnZR/lSawMCL4A2SF
 
 configuration:
