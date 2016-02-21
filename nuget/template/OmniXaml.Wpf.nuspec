@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>OmniXAML.Wpf</id>
-    <version#VERSION#</version>
+    <version>#VERSION#</version>
     <title>OmniXAML.Wpf</title>
     <authors>José Manuel Nieto (@SuperJMN)</authors>
     <owners>José Manuel Nieto (@SuperJMN)</owners>
