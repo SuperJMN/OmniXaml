@@ -46,7 +46,7 @@
             </Grid>
         </GroupBox>
         <ToolBar Grid.ColumnSpan="2" Grid.Row="1">
-            <Button Style="{StaticResource Style}" Content="Saludos cordiales" />
+            <Button Style="{StaticResource Style}" Content="Saludos cordiales" Click="Button_Click" />
         </ToolBar>
         
     </Grid>

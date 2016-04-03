@@ -1,5 +1,6 @@
 namespace OmniXaml.Typing
 {
+    using System.Linq;
     using System.Reflection;
     using TypeConversion;
 
@@ -34,6 +35,15 @@ namespace OmniXaml.Typing
             {
                 member.Setter.Invoke(instance, new[] { value });
             }
+        }
+
+        protected virtual void AttachEventHandler(object instance, string eventName, IValueContext valueContext)
+        {
+            var topLevelInstance = valueContext.TopDownValueContext.StoredInstances.First().Instance;
+            var callback = topLevelInstance.GetType().GetRuntimeMethods()
+                .FirstOrDefault(method => method.Name == eventName);
+            member.Setter.Invoke(instance,
+                new[] { callback.CreateDelegate(member.Setter.GetParameters()[0].ParameterType, topLevelInstance) });
         }
 
         private MethodInfo ValueSetter

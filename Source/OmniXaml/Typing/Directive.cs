@@ -1,3 +1,5 @@
+using System;
+
 namespace OmniXaml.Typing
 {
     public class Directive : MemberBase
@@ -14,6 +16,7 @@ namespace OmniXaml.Typing
 
         public override bool IsDirective => true;
         public override bool IsAttachable => false;
+        public override bool IsEvent => false;
 
         public override string ToString()
         {

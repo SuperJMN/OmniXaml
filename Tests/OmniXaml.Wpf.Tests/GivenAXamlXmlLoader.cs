@@ -9,5 +9,11 @@ namespace OmniXaml.Wpf.Tests
             var p = new WpfLoader();
             return LoadMixin.FromString(p, xamlContent);
         }
+
+        protected object LoadXaml(string xamlContent, object rootInstance)
+        {
+            var p = new WpfLoader();
+            return LoadMixin.FromString(p, xamlContent, rootInstance);
+        }
     }
 }

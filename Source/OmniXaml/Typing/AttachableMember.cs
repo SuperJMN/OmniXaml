@@ -1,5 +1,6 @@
 namespace OmniXaml.Typing
 {
+    using System;
     using System.Reflection;
 
     public class AttachableMember : MutableMember
@@ -20,6 +21,8 @@ namespace OmniXaml.Typing
 
         public override bool IsAttachable => true;
         public override bool IsDirective => false;
+
+        public override bool IsEvent => false;
 
         public override MethodInfo Getter => getter;
 

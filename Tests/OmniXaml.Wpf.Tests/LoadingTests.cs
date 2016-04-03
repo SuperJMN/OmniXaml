@@ -11,7 +11,7 @@
         [StaFact]
         public void Window()
         {
-            var windowType = typeof(Window);           
+            var windowType = typeof(Window);
 
             var actualInstance = LoadXaml(Resources.Window);
             Assert.IsType(windowType, actualInstance);
@@ -34,7 +34,7 @@
         [StaFact]
         public void DataTemplate()
         {
-            var visualTree = LoadXaml(Resources.DataTemplate);            
+            var visualTree = LoadXaml(Resources.DataTemplate);
         }
 
         [StaFact]
@@ -88,6 +88,24 @@
             Assert.Equal(0x80, color.R);
             Assert.Equal(0x80, color.G);
             Assert.Equal(0x80, color.B);
+        }
+
+        private class EventHandlingWindow : Window
+        {
+            public bool EventFired { get; private set; } = false;
+            private void TextChanged(object sender, RoutedEventArgs args)
+            {
+                EventFired = true;
+            }
+        }
+
+        [StaFact]
+        public void WindowWithEventHandler()
+        {
+            var visualTree = (EventHandlingWindow)LoadXaml(Resources.WindowWithEventHandler, new EventHandlingWindow());
+            var textBox = (TextBox)visualTree.Content;
+            textBox.Text = "New Text";
+            Assert.True(visualTree.EventFired);
         }
     }
 }

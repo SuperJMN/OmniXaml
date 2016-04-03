@@ -323,5 +323,18 @@ namespace Xaml.Tests.Resources {
                 return ResourceManager.GetString("WindowWithContent", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;Window xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;&gt;
+        ///  &lt;Window.Content&gt;
+        ///    &lt;Button Click=&quot;OnClicked&quot; /&gt;
+        ///  &lt;/Window.Content&gt;
+        ///&lt;/Window&gt;.
+        /// </summary>
+        public static string WindowWithEventHandler {
+            get {
+                return ResourceManager.GetString("WindowWithEventHandler", resourceCulture);
+            }
+        }
     }
 }

@@ -1,6 +1,7 @@
 namespace OmniXaml.Wpf
 {
     using System;
+    using System.Linq;
     using System.Reflection;
     using System.Windows;
     using System.Windows.Data;
@@ -28,6 +29,10 @@ namespace OmniXaml.Wpf
                 CommonValueConversion.TryConvert(value, xamlType, valueContext, out compatibleValue);
 
                 base.SetValue(instance, compatibleValue, valueContext);
+            }
+            else if (member.IsEvent)
+            {
+                base.AttachEventHandler(instance, (string)value, valueContext);
             }
             else
             {
