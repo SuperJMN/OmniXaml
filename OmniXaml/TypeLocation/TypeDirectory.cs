@@ -6,6 +6,7 @@
 
     public class TypeDirectory : ITypeDirectory
     {
+        private static readonly List<string> namespaceDeclarations = new List<string> { "using:", "clr-namespace:" };
         private readonly ISet<XamlNamespace> xamlNamespaces;
 
         public TypeDirectory(IEnumerable<XamlNamespace> xamlNamespaces)
@@ -42,8 +43,6 @@
 
         private static bool IsClrNamespace(string ns)
         {
-            var namespaceDeclarations = new List<string>{ "using:", "clr-namespace:" };
-
             return namespaceDeclarations.Exists(decl => ns.StartsWith(decl));
         }
     }
