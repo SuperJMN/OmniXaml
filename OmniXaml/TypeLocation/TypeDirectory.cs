@@ -36,22 +36,15 @@
             {
                 return TypeLocation.ClrNamespace.ExtractNamespace(name);
             }
-                
+
             return xamlNamespaces.FirstOrDefault(xamlNamespace => xamlNamespace.Name == name);
         }
 
         private static bool IsClrNamespace(string ns)
         {
-            var namespaceDeclarations = new string[] { "using:", "clr-namespace:" };
-            foreach (var decl in namespaceDeclarations)
-            {
-                if (ns.StartsWith(decl))
-                {
-                    return true;
-                }
-            }
+            var namespaceDeclarations = new List<string>{ "using:", "clr-namespace:" };
 
-            return false;
+            return namespaceDeclarations.Exists(decl => ns.StartsWith(decl));
         }
     }
 }
